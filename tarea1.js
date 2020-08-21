@@ -5,9 +5,13 @@
 const botonCalcular = document.querySelector("button");
 
 botonCalcular.onclick = function() {
+
+  const calcularSalarioMensual = function(salarioAnual) {
+    const salarioMensual = (salarioAnualUsuario / 12).toFixed(2);
+    return salarioMensual;
+  }
   const salarioAnualUsuario = Number(document.querySelector(".salario-anual").value);
   const salarioMensual = document.querySelector("#salario-mensual");
-  const calculoSalarioMensual = (salarioAnualUsuario / 12).toFixed(2);
-  salarioMensual.value = calculoSalarioMensual;
+  salarioMensual.value = calcularSalarioMensual(salarioAnualUsuario); 
   return false;
 };
